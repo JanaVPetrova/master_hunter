@@ -22,8 +22,8 @@
           %img{ src: post.photo.thumb }
         %td= link_to post.id, post_path(post)
         %td= post.nickname
-        %td= post.description
-        %td= post.place
+        %td= post.description.first 50
+        %td= post.place.first 50
         %td= post.date
         %td=l post.created_at
 
