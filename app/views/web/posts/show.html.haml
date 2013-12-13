@@ -1,14 +1,14 @@
 .page-header
-  %h1= @post.user.name
+  %h1= @post.nickname
 .row-fluid
   .span4
     %p
       = image_tag @post.photo.thumb
-    %p{ align: "justify" }
-      = @post.description
   .span4
     .row-fluid
       = @post.place
+      %br
+      = @post.description
     .row-fluid
       = @post.user.phone
 
