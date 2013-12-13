@@ -7,13 +7,16 @@
       %tr
         %td= link_to post.id, post_path(post)
         %td= post.nickname
-        %td= post.description
-        %td= post.place
+        %td= post.description.first 50
+        %td= post.place.first 50
         %td= post.date
         %td=l post.created_at
         - unless post.published?
           %td
             = link_to t('.publish'), publish_admin_post_path(post), method: :patch, class: 'btn btn-mini btn-primary'
+        - unless post.success?
+          %td
+            = link_to t('.success'), success_admin_post_path(post), method: :patch, class: 'btn btn-mini btn-primary'
         %td
           = link_to t('.destroy', default: t("helpers.links.destroy")), admin_post_path(post), method: :delete, data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) }, class: 'btn btn-mini btn-danger'
 

@@ -22,7 +22,7 @@
               %a{ href: posts_path }
                 Объявления
             %li
-              %a
+              %a{ href: success_stories_path }
                 Истории успеха
             - if signed_in?
               %li
@@ -34,5 +34,13 @@
               %li
                 %a{ href: new_session_path }
                   Войти
+              %li
+                %a{ href: new_user_path }
+                  Регистрация
+              %li
+                %a{ href: new_user_path }
+                  Рассказать о бездомыше
   .container
     = yield
+  %hr
+  = render 'layouts/footer'

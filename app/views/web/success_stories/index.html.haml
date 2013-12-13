@@ -1,0 +1,9 @@
+- @posts.each do |post|
+  .row
+    .span3
+      %img{ src: post.photo.thumb, class: 'img-polaroid' }
+    .span4
+      %h2= post.nickname
+      = post.description
+      %a{ href: post.user }
+  %hr

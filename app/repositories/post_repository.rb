@@ -5,5 +5,6 @@ module PostRepository
     scope :active, -> { where state: :active }
     scope :success, -> { where story: :success }
     scope :published, -> { where publication_state: :published }
+    scope :processed, -> { where story: :processed }
   end
 end

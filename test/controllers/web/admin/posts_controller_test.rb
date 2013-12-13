@@ -34,6 +34,14 @@ class Web::Admin::PostsControllerTest < ActionController::TestCase
     assert { @post.published? }
   end
 
+  test 'should patch success' do
+    patch :success, id: @post
+
+    assert_response :redirect
+    @post.reload
+    assert { @post.success? }
+  end
+
   test 'should get edit' do
     get :edit, id: @post
 

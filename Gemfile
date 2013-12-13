@@ -21,6 +21,7 @@ gem 'russian'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'rails_12factor', group: :production
+gem 'auto_html', git: "git://github.com/dejan/auto_html"
 
 group :test do
   gem 'tconsole'

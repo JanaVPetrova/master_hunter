@@ -1,8 +1,13 @@
 - @posts.each do |post|
-  .row
+  .row{ onclick: "return location.href = '#{post_path(post)}'"}
     .span3
-      %img{ src: post.photo, class: 'img-polaroid' }
+      %img{ src: post.photo.thumb, class: 'img-polaroid' }
     .span4
       %h2= post.nickname
       = post.description
+      %br
+      %a{ href: post.user }
+        = post.user.phone
+      %br
+      = post.date
   %hr
