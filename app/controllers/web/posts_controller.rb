@@ -24,6 +24,10 @@ class Web::PostsController < Web::ApplicationController
 
   def edit
     @post = Post.find params[:id]
+    # FIXME remove this shit
+    if current_user != @post.user
+      redirect_to root_path
+    end
   end
 
   def update
