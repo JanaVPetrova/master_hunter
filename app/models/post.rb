@@ -4,8 +4,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
 
   validates :description, presence: true
-  validates :place, presence: true,
-                    url: true
+  validates :place, presence: true
   validates :date, presence: true
 
   mount_uploader :photo, PostPhotoUploader
