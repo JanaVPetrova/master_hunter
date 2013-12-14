@@ -5,7 +5,27 @@
   = javascript_include_tag "application"
   = csrf_meta_tags
 %body
-  .navbar-wrapper.navbar-margin-top.navbar-big-text.navbar-size
-    .navbar.navbar-opacity-white
+  .navbar-wrapper
+    .navbar.navbar-inverse
+      .navbar-inner
+        %button.btn.btn-navbar
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.brand{ href: "http://ulmic.ru" }
+          .logo-mic
+        %a.brand{ href: root_path }
+          Ищу хозяина
+        .nav-collapse.collapse
+          %ul.nav
+            %li
+              %a{ href: posts_path }
+                Объявления
+            %li
+              %a
+                Истории успеха
+            %li
+              %a{ href: new_post_path }
+                Рассказать о бездомыше
   .container
     = yield
