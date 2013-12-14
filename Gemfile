@@ -18,6 +18,8 @@ gem 'twitter-bootstrap-rails'
 gem 'virtus'
 gem 'state_machine'
 gem 'russian'
+gem 'carrierwave'
+gem 'mini_magick'
 
 group :test do
   gem 'tconsole'
