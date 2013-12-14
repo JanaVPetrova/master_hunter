@@ -10,3 +10,5 @@ ru:
     posts:
       new:
         title: Создать объявление
+      index:
+        title: Объявления
