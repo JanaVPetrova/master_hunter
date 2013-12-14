@@ -1,0 +1,8 @@
+ru:
+  cancel: Отмена
+  save: Сохранить
+  create: Создать
+  web:
+    users:
+      new:
+        title: Создать пользователя

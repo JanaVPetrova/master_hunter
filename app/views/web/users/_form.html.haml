@@ -4,5 +4,5 @@
   = f.input :password
   = f.input :phone
   .form-actions
-    = f.button :submit, class: 'btn btn-primary'
-    = link_to t('.cancel', default: t("helpers.links.cancel")), users_path, class: 'btn'
+    = f.button :submit, t('save'), class: 'btn btn-primary'
+    = link_to t('cancel'), users_path, class: 'btn'
