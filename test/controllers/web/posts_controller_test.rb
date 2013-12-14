@@ -22,11 +22,13 @@ class Web::PostsControllerTest < ActionController::TestCase
 
   test 'should post create' do
     attrs = attributes_for :post
+    attrs[:user_id] = @user.id
 
     post :create, post: attrs
 
     assert_response :redirect
     assert { Post.last.description == attrs[:description] }
+    assert { Post.last.user == current_user }
   end
 
   test 'should get show' do

@@ -6,5 +6,6 @@ FactoryGirl.define do
     description { generate :string }
     place { generate :string }
     date { generate :date }
+    association :user, factory: :user
   end
 end

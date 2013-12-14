@@ -1,6 +1,8 @@
 class Post < ActiveRecord::Base
   include PostRepository
 
+  belongs_to :user
+
   validates :description, presence: true
   validates :place, presence: true
   validates :date, presence: true

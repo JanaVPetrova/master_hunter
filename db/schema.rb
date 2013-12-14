@@ -11,20 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131214204030) do
+ActiveRecord::Schema.define(version: 20131214212236) do
 
   create_table "post_photos", force: true do |t|
     t.string   "attach"
-    t.integer  "post_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "post_photos", force: true do |t|
-    t.string   "file"
     t.integer  "post_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -40,7 +30,10 @@ ActiveRecord::Schema.define(version: 20131214204030) do
     t.string   "state"
     t.string   "publication_state"
     t.string   "photo"
+    t.integer  "user_id"
   end
+
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"
