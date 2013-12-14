@@ -1,0 +1,23 @@
+- model_class = Post
+.page-header
+  %h1=t '.title', default: model_class.model_name.human.pluralize.titleize
+%table.table.table-striped
+  %tbody
+    - @posts.each do |post|
+      %tr
+        %td= link_to post.id, post_path(post)
+        %td= post.nickname
+        %td= post.description
+        %td= post.place
+        %td= post.date
+        %td=l post.created_at
+        - unless post.published?
+          %td
+            = link_to t('.publish'), publish_admin_post_path(post), method: :patch, class: 'btn btn-mini btn-primary'
+        %td
+          = link_to t('.destroy', default: t("helpers.links.destroy")), post_path(post), method: :delete, data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) }, class: 'btn btn-mini btn-danger'
+
+- if signed_in?
+  = link_to t('.new', default: t("helpers.links.new")), new_post_path, class: 'btn btn-primary'
+- else
+  = link_to "sign in", new_session_path

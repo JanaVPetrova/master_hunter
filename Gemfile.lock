@@ -30,6 +30,10 @@ GEM
     backports (3.3.4)
     bcrypt-ruby (3.1.2)
     builder (3.1.4)
+    carrierwave (0.9.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
     chattyproc (1.0.0)
     coderay (1.1.0)
     coffee-rails (4.0.1)
@@ -78,6 +82,8 @@ GEM
       treetop (~> 1.4.8)
     method_source (0.8.2)
     mime-types (1.25.1)
+    mini_magick (3.6.0)
+      subexec (~> 0.2.1)
     minitest (4.3.3)
     minitest-rails (0.5.2)
       minitest (~> 4.0)
@@ -143,6 +149,7 @@ GEM
       activesupport (>= 3.0)
       sprockets (~> 2.8)
     state_machine (1.2.0)
+    subexec (0.2.3)
     tconsole (1.2.8)
       chattyproc (~> 1.0.0)
       minitest (~> 4.3.0)
@@ -189,6 +196,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt-ruby (~> 3.1.2)
+  carrierwave
   coffee-rails (~> 4.0.0)
   coveralls
   factory_girl_rails
@@ -196,6 +204,7 @@ DEPENDENCIES
   haml-rails
   jquery-rails
   jquery-ui-rails
+  mini_magick
   minitest-rails
   pg
   pry

@@ -1,11 +1,11 @@
 require 'test_helper'
 
-class Web::PostsControllerTest < ActionController::TestCase
+class Web::Admin::PostsControllerTest < ActionController::TestCase
   setup do
     @post = create :post
-    @user = create :user
+    @admin = create :admin
 
-    sign_in @user
+    sign_in @admin
   end
 
   test 'shoult get index' do
@@ -14,25 +14,30 @@ class Web::PostsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test 'should get new' do
-    get :new
+  test 'should get show' do
+    get :show, id: @post
 
     assert_response :success
   end
 
-  test 'should post create' do
-    attrs = attributes_for :post
-    attrs[:user_id] = @user.id
-
-    post :create, post: attrs
+  test 'shoult delete destroy' do
+    delete :destroy, id: @post
 
     assert_response :redirect
-    assert { Post.last.description == attrs[:description] }
-    assert { Post.last.user == current_user }
+    @post.reload
+    assert { @post.deleted? }
   end
 
-  test 'should get show' do
-    get :show, id: @post
+  test 'should patch publish' do
+    patch :publish, id: @post
+
+    assert_response :redirect
+    @post.reload
+    assert { @post.published? }
+  end
+
+  test 'should get edit' do
+    get :edit, id: @post
 
     assert_response :success
   end

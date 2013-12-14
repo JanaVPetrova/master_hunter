@@ -1,25 +1,24 @@
-class Web::PostsController < Web::ApplicationController
-  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-
+class Web::Admin::PostsController < ApplicationController
   def index
     @posts = Post.web
   end
 
-  def new
-    @post = PostEditType.new
-  end
-
-  def create
-    @post = PostEditType.new params[:post]
-    if @post.save
-      redirect_to root_path
-    else
-      render :new
-    end
-  end
-
   def show
     @post = Post.find params[:id]
+  end
+
+  def destroy
+    @post = Post.find params[:id]
+    @post.mark_as_deleted!
+
+    redirect_to posts_path
+  end
+
+  def publish
+    @post = Post.find params[:id]
+    @post.publish
+
+    redirect_to admin_posts_path
   end
 
   def edit

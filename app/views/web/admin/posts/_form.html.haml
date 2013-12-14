@@ -4,7 +4,6 @@
   = f.input :place
   = f.input :date
   = f.input :photo
-  = f.input :user_id, as: :hidden, input_html: { value: current_user.id }
   .form-actions
     = f.button :submit, class: 'btn btn-primary'
     = link_to t('.cancel', default: t("helpers.links.cancel")), posts_path, class: 'btn'
