@@ -27,4 +27,12 @@ class Web::Admin::PostsControllerTest < ActionController::TestCase
     @post.reload
     assert { @post.deleted? }
   end
+
+  test 'should patch publish' do
+    patch :publish, id: @post
+
+    assert_response :redirect
+    @post.reload
+    assert { @post.published? }
+  end
 end

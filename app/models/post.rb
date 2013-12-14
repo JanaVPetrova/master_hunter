@@ -17,4 +17,13 @@ class Post < ActiveRecord::Base
       transition deleted: :active
     end
   end
+
+  state_machine :publication_state, initial: :unpublished do
+    state :published
+    state :unpublished
+
+    event :publish do
+      transition unpublished: :published
+    end
+  end
 end
