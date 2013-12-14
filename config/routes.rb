@@ -3,5 +3,6 @@ MasterHunter::Application.routes.draw do
     root to: "welcome#index"
     resources :users, only: [:create, :new]
     resources :welcome, only: [:index]
+    resource :session, only: [:create, :destroy, :new]
   end
 end

@@ -10,5 +10,6 @@ class ActiveSupport::TestCase
   ActiveRecord::Migration.check_pending!
 
   include FactoryGirl::Syntax::Methods
+  include Concerns::AuthHelper
   include Wrong
 end
