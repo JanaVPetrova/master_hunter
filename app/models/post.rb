@@ -18,16 +18,16 @@ class Post < ActiveRecord::Base
     end
   end
 
-  state_machine :story, initial: :process do
-    state :process
+  state_machine :story, initial: :processed do
+    state :processed
     state :success
 
     event :to_success do
-      transition process: :success
+      transition processed: :success
     end
 
     event :error_success do
-      transition success: :process
+      transition success: :processed
     end
   end
 end
