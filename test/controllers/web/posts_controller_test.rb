@@ -31,4 +31,12 @@ class Web::PostsControllerTest < ActionController::TestCase
 
     assert_response :success
   end
+
+  test 'shoult delete destroy' do
+    delete :destroy, id: @post
+
+    assert_response :redirect
+    @post.reload
+    assert { @post.deleted? }
+  end
 end

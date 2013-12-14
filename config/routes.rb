@@ -5,6 +5,6 @@ MasterHunter::Application.routes.draw do
     resources :welcome, only: [:index]
     resource :session, only: [:create, :destroy, :new]
 
-    resources :posts, only: [:index, :new, :create, :show]
+    resources :posts, only: [:index, :new, :create, :show, :destroy]
   end
 end
