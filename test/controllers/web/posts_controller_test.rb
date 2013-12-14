@@ -1,6 +1,10 @@
 require 'test_helper'
 
 class Web::PostsControllerTest < ActionController::TestCase
+  setup do
+    @post = create :post
+  end
+
   test 'should get new' do
     get :new
 
@@ -14,5 +18,11 @@ class Web::PostsControllerTest < ActionController::TestCase
 
     assert_response :redirect
     assert { Post.last.description == attrs[:description] }
+  end
+
+  test 'should get show' do
+    get :show, id: @post
+
+    assert_response :success
   end
 end
