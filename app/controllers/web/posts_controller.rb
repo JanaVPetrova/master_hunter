@@ -1,4 +1,8 @@
 class Web::PostsController < Web::ApplicationController
+  def index
+    @posts = Post.web
+  end
+
   def new
     @post = PostEditType.new
   end

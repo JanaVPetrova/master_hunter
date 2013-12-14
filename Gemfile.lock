@@ -140,6 +140,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
+    state_machine (1.2.0)
     tconsole (1.2.8)
       chattyproc (~> 1.0.0)
       minitest (~> 4.3.0)
@@ -199,6 +200,7 @@ DEPENDENCIES
   rails (= 4.0.1)
   sass-rails (~> 4.0.0)
   simple_form
+  state_machine
   tconsole
   therubyracer
   twitter-bootstrap-rails

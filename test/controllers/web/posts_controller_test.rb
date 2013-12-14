@@ -5,6 +5,12 @@ class Web::PostsControllerTest < ActionController::TestCase
     @post = create :post
   end
 
+  test 'shoult get index' do
+    get :index
+
+    assert_response :success
+  end
+
   test 'should get new' do
     get :new
 
