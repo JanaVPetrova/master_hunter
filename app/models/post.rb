@@ -17,4 +17,17 @@ class Post < ActiveRecord::Base
       transition deleted: :active
     end
   end
+
+  state_machine :story, initial: :process do
+    state :process
+    state :success
+
+    event :to_success do
+      transition process: :success
+    end
+
+    event :error_success do
+      transition success: :process
+    end
+  end
 end
