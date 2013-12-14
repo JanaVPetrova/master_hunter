@@ -13,16 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20131214222639) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "post_photos", force: true do |t|
-    t.string   "file"
-    t.integer  "post_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "posts", force: true do |t|
     t.string   "nickname"
     t.text     "description"
@@ -33,8 +23,8 @@ ActiveRecord::Schema.define(version: 20131214222639) do
     t.string   "state"
     t.string   "publication_state"
     t.string   "photo"
-    t.string   "story"
     t.integer  "user_id"
+    t.string   "story"
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
