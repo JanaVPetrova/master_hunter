@@ -116,6 +116,8 @@ GEM
       sexp_processor (~> 4.0)
     ruby_parser (3.2.2)
       sexp_processor (~> 4.1)
+    russian (0.6.0)
+      i18n (>= 0.5.0)
     sass (3.2.12)
     sass-rails (4.0.1)
       railties (>= 4.0.0, < 5.0)
@@ -140,6 +142,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
+    state_machine (1.2.0)
     tconsole (1.2.8)
       chattyproc (~> 1.0.0)
       minitest (~> 4.3.0)
@@ -197,8 +200,10 @@ DEPENDENCIES
   pg
   pry
   rails (= 4.0.1)
+  russian
   sass-rails (~> 4.0.0)
   simple_form
+  state_machine
   tconsole
   therubyracer
   twitter-bootstrap-rails

@@ -16,6 +16,8 @@ gem 'jquery-ui-rails'
 gem 'simple_form'
 gem 'twitter-bootstrap-rails'
 gem 'virtus'
+gem 'state_machine'
+gem 'russian'
 
 group :test do
   gem 'tconsole'
