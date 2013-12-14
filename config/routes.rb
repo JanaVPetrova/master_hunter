@@ -8,7 +8,7 @@ MasterHunter::Application.routes.draw do
     resources :posts, only: [:index, :show, :new, :create, :edit, :update]
 
     namespace :admin do
-      resources :posts, only: [:show, :index, :destroy] do
+      resources :posts, only: [:show, :index, :destroy, :edit, :update] do
         member do
           patch :publish
         end
