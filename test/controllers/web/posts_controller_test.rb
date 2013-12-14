@@ -39,4 +39,14 @@ class Web::PostsControllerTest < ActionController::TestCase
     @post.reload
     assert { @post.deleted? }
   end
+
+  test 'should patch update' do
+    attrs = attributes_for(:post).extract!(:description, :place, :date, :nickname)
+
+    patch :update, id: @post, post: attrs
+
+    assert_response :redirect
+    @post.reload
+    assert { @post.description == attrs[:description] }
+  end
 end

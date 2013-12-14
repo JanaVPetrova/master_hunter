@@ -20,6 +20,21 @@ class Web::PostsController < Web::ApplicationController
     @post = Post.find params[:id]
   end
 
+  def edit
+    @post = Post.find params[:id]
+  end
+
+  def update
+    @post = Post.find params[:id]
+    @post = @post.becomes PostEditType
+
+    if @post.update params[:post]
+      redirect_to @post
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @post = Post.find params[:id]
     @post.mark_as_deleted!
