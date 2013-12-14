@@ -1,4 +1,6 @@
 class Web::PostsController < Web::ApplicationController
+  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+
   def index
     @posts = Post.web
   end
@@ -33,12 +35,5 @@ class Web::PostsController < Web::ApplicationController
     else
       render :edit
     end
-  end
-
-  def destroy
-    @post = Post.find params[:id]
-    @post.mark_as_deleted!
-
-    redirect_to posts_path
   end
 end

@@ -3,6 +3,9 @@ require 'test_helper'
 class Web::PostsControllerTest < ActionController::TestCase
   setup do
     @post = create :post
+    @user = create :user
+
+    sign_in @user
   end
 
   test 'shoult get index' do
@@ -30,14 +33,6 @@ class Web::PostsControllerTest < ActionController::TestCase
     get :show, id: @post
 
     assert_response :success
-  end
-
-  test 'shoult delete destroy' do
-    delete :destroy, id: @post
-
-    assert_response :redirect
-    @post.reload
-    assert { @post.deleted? }
   end
 
   test 'should patch update' do
