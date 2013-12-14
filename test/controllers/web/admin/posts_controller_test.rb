@@ -35,4 +35,20 @@ class Web::Admin::PostsControllerTest < ActionController::TestCase
     @post.reload
     assert { @post.published? }
   end
+
+  test 'should get edit' do
+    get :edit, id: @post
+
+    assert_response :success
+  end
+
+  test 'should patch update' do
+    attrs = attributes_for(:post).extract!(:description, :place, :date, :nickname)
+
+    patch :update, id: @post, post: attrs
+
+    assert_response :redirect
+    @post.reload
+    assert { @post.description == attrs[:description] }
+  end
 end
