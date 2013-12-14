@@ -1,0 +1,10 @@
+.offset3.span5
+  %h2= t('auth')
+  = simple_form_for @session, url: session_path do |f|
+    - f.with_options input_html: { class: :span4 } do |f|
+      .field
+        = f.input :email
+        = f.input :password
+    .form-actions
+      = f.button :submit, value: t('auth'), class: 'btn btn-primary'
+      = link_to t('cancel'), root_path, class: 'btn'

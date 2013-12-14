@@ -7,3 +7,13 @@ ru:
         name: Имя
         phone: Телефон
         password: Пароль
+  activemodel:
+    attributes:
+      user_sign_in_type:
+        password: Пароль
+    errors:
+      models:
+        user_sign_in_type:
+          attributes:
+            password:
+              user_or_password_invalid: Неверный логин или пароль

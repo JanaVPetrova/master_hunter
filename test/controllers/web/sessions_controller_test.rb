@@ -7,7 +7,6 @@ class Web::SessionsControllerTest < ActionController::TestCase
 
   test 'should get new' do
     get :new
-
     assert_response :success
   end
 
@@ -17,7 +16,7 @@ class Web::SessionsControllerTest < ActionController::TestCase
       password: @user.password
     }
 
-    post :create, user: attrs
+    post :create, user_sign_in_type: attrs
 
     assert_response :redirect
     assert { current_user == @user }
