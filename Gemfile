@@ -7,6 +7,7 @@ gem 'unicorn'
 
 gem 'therubyracer', platforms: :ruby
 gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'twitter-bootstrap-rails'
 
 group :test do
   gem 'tconsole'
