@@ -14,6 +14,7 @@ gem 'haml-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'simple_form'
+gem 'twitter-bootstrap-rails'
 
 group :test do
   gem 'tconsole'
