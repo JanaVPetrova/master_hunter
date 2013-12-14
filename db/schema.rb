@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20131214222639) do
   enable_extension "plpgsql"
 
   create_table "post_photos", force: true do |t|
-    t.string   "attach"
+    t.string   "file"
     t.integer  "post_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 20131214222639) do
     t.datetime "updated_at"
     t.string   "state"
     t.string   "publication_state"
-    t.string   "story"
     t.string   "photo"
+    t.string   "story"
     t.integer  "user_id"
   end
 
