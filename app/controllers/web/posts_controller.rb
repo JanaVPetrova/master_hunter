@@ -2,7 +2,7 @@ class Web::PostsController < Web::ApplicationController
   before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @posts = Post.web
+    @posts = Post.active.published
   end
 
   def new

@@ -6,6 +6,7 @@ MasterHunter::Application.routes.draw do
     resource :session, only: [:create, :destroy, :new]
 
     resources :posts, only: [:index, :show, :new, :create, :edit, :update]
+    resources :success_stories, only: [:index]
 
     namespace :admin do
       resources :posts, only: [:show, :index, :destroy, :edit, :update] do

@@ -1,6 +1,6 @@
 class Web::Admin::PostsController < ApplicationController
   def index
-    @posts = Post.web
+    @posts = Post.active
   end
 
   def show
