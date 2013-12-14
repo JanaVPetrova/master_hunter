@@ -2,6 +2,7 @@ ru:
   cancel: Отмена
   save: Сохранить
   create: Создать
+  auth: Войти
   web:
     users:
       new:

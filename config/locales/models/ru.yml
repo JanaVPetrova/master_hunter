@@ -7,3 +7,8 @@ ru:
         name: Имя
         phone: Телефон
         password: Пароль
+  activemodel:
+    attributes:
+      user_sign_in_type:
+        password: Пароль
+

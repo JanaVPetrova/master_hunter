@@ -4,7 +4,7 @@ class Web::SessionsController < Web::ApplicationController
   end
 
   def create
-    @session = UserSignInType.new params[:user]
+    @session = UserSignInType.new params[:user_sign_in_type]
 
     if @session.valid?
       sign_in @session.user
