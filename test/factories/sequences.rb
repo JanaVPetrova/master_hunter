@@ -14,4 +14,8 @@ FactoryGirl.define do
   sequence :phone do |n|
     "+7#{n % 10}"
   end
+
+  sequence :date do |n|
+    Date.today + n.days
+  end
 end
