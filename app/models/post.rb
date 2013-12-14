@@ -5,6 +5,8 @@ class Post < ActiveRecord::Base
   validates :place, presence: true
   validates :date, presence: true
 
+  mount_uploader :photo, PostPhotoUploader
+
   state_machine :state, initial: :active do
     state :active
     state :deleted
