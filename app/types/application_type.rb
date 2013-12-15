@@ -20,7 +20,6 @@ module ApplicationType
   end
 
   def assign_attributes(attrs = {}, options = {})
-    raise ArgumentError, "expected hash" if attrs.nil?
     permitted_attrs = attrs.send :permit, self.class._args
     super(permitted_attrs)
   end
