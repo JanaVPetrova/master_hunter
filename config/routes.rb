@@ -12,6 +12,7 @@ MasterHunter::Application.routes.draw do
       resources :posts, only: [:show, :index, :destroy, :edit, :update] do
         member do
           patch :publish
+          patch :success
         end
       end
     end
