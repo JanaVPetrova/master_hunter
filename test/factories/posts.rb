@@ -4,7 +4,7 @@ FactoryGirl.define do
   factory :post do
     nickname { generate :string }
     description { generate :string }
-    place { generate :string }
+    place { generate :url }
     date { generate :date }
     user
   end

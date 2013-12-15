@@ -1,5 +1,5 @@
 - @posts.each do |post|
-  .row
+  .row{ onclick: "return location.href = '#{post_path(post)}'"}
     .span3
       %img{ src: post.photo.thumb, class: 'img-polaroid' }
     .span4

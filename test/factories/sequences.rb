@@ -18,4 +18,7 @@ FactoryGirl.define do
   sequence :date do |n|
     Date.today + n.days
   end
+  sequence :site, aliases: [:shop_site, :url] do |n|
+    "http://site-#{n}.com"
+  end
 end
