@@ -20,12 +20,10 @@ class Web::Admin::PostsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should destroy post" do
-    assert_difference('Post.count', -1) do
-      delete :destroy, id: @post
-    end
-
-    assert_redirected_to admin_posts_path
+  test "should delete post" do
+    delete :destroy, id: @post
+    @post.reload
+    assert_equal true, @post.deleted?
   end
 
   test 'should patch publish' do
