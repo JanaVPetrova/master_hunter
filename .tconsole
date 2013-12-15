@@ -1,0 +1,3 @@
+TConsole::Config.run do |config|
+  config.file_sets.merge! "al" => ["test/**/*_test.rb"]
+end

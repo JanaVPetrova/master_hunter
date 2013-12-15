@@ -1,0 +1,38 @@
+%head
+  %title MasterHunter
+  = stylesheet_link_tag    "bootstrap_and_overrides", media: "all"
+  = stylesheet_link_tag    "application"
+  = javascript_include_tag "application"
+  = csrf_meta_tags
+%body
+  .navbar-wrapper
+    .navbar.navbar-inverse
+      .navbar-inner
+        %button.btn.btn-navbar
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.brand{ href: "http://ulmic.ru" }
+          .logo-mic
+        %a.brand{ href: root_path }
+          Ищу хозяина
+        .nav-collapse.collapse
+          %ul.nav
+            %li
+              %a{ href: posts_path }
+                Объявления
+            %li
+              %a
+                Истории успеха
+            - if signed_in?
+              %li
+                %a{ href: new_post_path }
+                  Рассказать о бездомыше
+              %li
+                = link_to t('sign_out'), session_path, method: :delete
+            - else
+              %li
+                %a{ href: new_session_path }
+                  Войти
+  .container
+    = yield

@@ -1,0 +1,26 @@
+ru:
+  activerecord:
+    models:
+      user: Пользователь
+      post: Объявление
+    attributes:
+      user:
+        name: Имя
+        phone: Телефон
+        password: Пароль
+      post:
+        description: Описание
+        place: Место
+        date: Дата нахождения
+        photo: Фото
+        nickname: Кличка
+  activemodel:
+    attributes:
+      user_sign_in_type:
+        password: Пароль
+    errors:
+      models:
+        user_sign_in_type:
+          attributes:
+            password:
+              user_or_password_invalid: Неверный логин или пароль

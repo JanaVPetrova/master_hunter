@@ -1,0 +1,15 @@
+ru:
+  cancel: Отмена
+  save: Сохранить
+  create: Создать
+  auth: Войти
+  sign_out: Выйти
+  web:
+    users:
+      new:
+        title: Создать пользователя
+    posts:
+      new:
+        title: Создать объявление
+      index:
+        title: Объявления
