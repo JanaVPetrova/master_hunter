@@ -10,6 +10,14 @@
   %tbody
     - @posts.each do |post|
       %tr
+      - if post.success?
+        %td
+          %span.label.label-success
+            Хозяин найден!
+      - else
+        %td
+          %span.label.label-info
+            Идёт поиск хозяина
         %td
           %img{ src: post.photo.thumb }
         %td= link_to post.id, post_path(post)
