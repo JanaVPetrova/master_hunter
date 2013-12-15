@@ -24,8 +24,15 @@
             %li
               %a
                 Истории успеха
-            %li
-              %a{ href: new_post_path }
-                Рассказать о бездомыше
+            - if signed_in?
+              %li
+                %a{ href: new_post_path }
+                  Рассказать о бездомыше
+              %li
+                = link_to t('sign_out'), session_path, method: :delete
+            - else
+              %li
+                %a{ href: new_session_path }
+                  Войти
   .container
     = yield
