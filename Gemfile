@@ -20,6 +20,7 @@ gem 'state_machine'
 gem 'russian'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'rails_12factor', group: :production
 
 group :test do
   gem 'tconsole'
