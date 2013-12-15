@@ -7,7 +7,7 @@ ru:
   web:
     users:
       new:
-        title: Создать пользователя
+        title: Зарегистрироваться
     posts:
       new:
         title: Создать объявление
