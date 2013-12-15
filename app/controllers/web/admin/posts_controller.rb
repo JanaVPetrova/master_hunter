@@ -21,6 +21,13 @@ class Web::Admin::PostsController < ApplicationController
     redirect_to admin_posts_path
   end
 
+  def success
+    @post = Post.find params[:id]
+    @post.to_success
+
+    redirect_to admin_posts_path
+  end
+
   def edit
     @post = Post.find params[:id]
   end
