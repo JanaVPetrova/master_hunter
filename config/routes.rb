@@ -1,6 +1,6 @@
 MasterHunter::Application.routes.draw do
   scope module: :web do
-    root to: "posts#index"
+    root to: "welcome#index"
     resources :users, only: [:create, :new]
     resources :welcome, only: [:index]
     resource :session, only: [:create, :destroy, :new]

@@ -20,12 +20,10 @@ class Web::Admin::PostsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test 'shoult delete destroy' do
+  test "should delete post" do
     delete :destroy, id: @post
-
-    assert_response :redirect
     @post.reload
-    assert { @post.deleted? }
+    assert_equal true, @post.deleted?
   end
 
   test 'should patch publish' do

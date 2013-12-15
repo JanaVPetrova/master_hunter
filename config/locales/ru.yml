@@ -3,6 +3,7 @@ ru:
   save: Сохранить
   create: Создать
   auth: Войти
+  sign_out: Выйти
   web:
     users:
       new:
