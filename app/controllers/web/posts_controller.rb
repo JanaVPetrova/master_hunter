@@ -1,5 +1,5 @@
 class Web::PostsController < Web::ApplicationController
-  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_filter :authenticate_user!, only: [:new, :create, :destroy]
 
   def index
     @posts = Post.active.published
@@ -20,24 +20,5 @@ class Web::PostsController < Web::ApplicationController
 
   def show
     @post = Post.find params[:id]
-  end
-
-  def edit
-    @post = Post.find params[:id]
-    # FIXME remove this shit
-    if current_user != @post.user
-      redirect_to root_path
-    end
-  end
-
-  def update
-    @post = Post.find params[:id]
-    @post = @post.becomes PostEditType
-
-    if @post.update params[:post]
-      redirect_to @post
-    else
-      render :edit
-    end
   end
 end
