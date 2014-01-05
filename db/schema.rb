@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131214222639) do
+ActiveRecord::Schema.define(version: 20140105162820) do
 
   create_table "posts", force: true do |t|
     t.string   "nickname"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20131214222639) do
     t.string   "publication_state"
     t.string   "photo"
     t.integer  "user_id"
-    t.string   "story"
+    t.string   "story_state"
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree

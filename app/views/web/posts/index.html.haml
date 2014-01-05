@@ -6,18 +6,13 @@
   = link_to t('.new', :default => t("helpers.links.new")), new_post_path, :class => 'btn btn-primary'
   %br
   %br
-%table.table.table-striped
+%table.table.table-hover
   %tbody
     - @posts.each do |post|
       %tr{ onclick: "return location.href = '#{post_path(post)}'"}
-      - if post.success?
         %td
           %span.label.label-success
-            Хозяин найден!
-      - else
-        %td
-          %span.label.label-info
-            Идёт поиск хозяина
+            = post.human_story_state_name
         %td
           %img{ src: post.photo.thumb }
         %td= link_to post.id, post_path(post)

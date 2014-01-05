@@ -1,0 +1,12 @@
+ru:
+  activerecord:
+    state_machines:
+      post:
+        story_state:
+          states:
+            processed: 'Идёт поиск хозяина'
+            success: 'Хозяин найден!'
+        publication_state:
+          states:
+            published: 'Опубликовано'
+            unpublised: 'Не опубликовано'

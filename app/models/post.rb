@@ -22,7 +22,7 @@ class Post < ActiveRecord::Base
     end
   end
 
-  state_machine :story, initial: :processed do
+  state_machine :story_state, initial: :processed do
     state :processed
     state :success
 
