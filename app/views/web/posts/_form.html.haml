@@ -1,12 +1,18 @@
 = stylesheet_link_tag :posts
-= simple_form_for @post, html: { class: 'form-horizontal' } do |f|
-  - f.with_options input_html: { class: 'span5' } do |f|
-    = f.input :nickname
-    = f.input :description
-    = f.input :place
-    = f.input :date
-    = f.input :photo
-    = f.input :user_id, as: :hidden, input_html: { value: current_user.id }
-  .form-actions
-    = f.button :submit, class: 'btn btn-primary'
-    = link_to t('cancel', default: t("helpers.links.cancel")), posts_path, class: 'btn'
+= simple_form_for @post, html: { class: 'form-horizontal col-lg-6' } do |f|
+  - f.with_options input_html: { class: 'form-control' } do |f|
+    %fieldset
+      .form-group
+        = f.input :nickname 
+      .form-group
+        = f.input :description
+      .form-group
+        = f.input :place
+      .form-group
+        = f.input :date
+      .form-group
+        = f.input :photo
+      = f.input :user_id, as: :hidden, input_html: { value: current_user.id }
+    .form-actions
+      = f.button :submit, class: 'btn btn-primary'
+      = link_to t('cancel', default: t("helpers.links.cancel")), posts_path, class: 'btn'
